@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Queen Laundry</title>
+    <title>Queen Laundry | Cuci Kering Setrika</title>
+
+    <meta name="description" content="Queen Laundry - Cuci, Kering dan Setrika. Laundry bersih, wangi dan rapi mulai Rp8.000/kg.">
 
     <style>
         * {
@@ -13,71 +15,143 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #7b2cbf, #e83e8c);
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f3ff;
             color: #333;
-            min-height: 100vh;
-            padding: 20px;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 600px;
+            max-width: 650px;
             margin: auto;
         }
 
-        /* HEADER */
-        header {
-            text-align: center;
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            background: linear-gradient(135deg, #6a1b9a, #9c27b0, #e83e8c);
             color: white;
-            padding: 30px 10px;
+            text-align: center;
+            padding: 45px 20px 55px;
+            border-radius: 0 0 35px 35px;
+            box-shadow: 0 8px 25px rgba(106, 27, 154, 0.3);
         }
 
         .crown {
-            font-size: 55px;
-            margin-bottom: 10px;
+            font-size: 58px;
+            margin-bottom: 5px;
         }
 
-        header h1 {
-            font-size: 36px;
-            margin-bottom: 8px;
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
-        header p {
+        .hero .subtitle {
             font-size: 18px;
+            opacity: 0.95;
         }
 
-        /* CARD */
+        .hero .tagline {
+            margin-top: 15px;
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        /* =========================
+           CONTENT
+        ========================== */
+
+        .content {
+            padding: 20px;
+        }
+
         .card {
             background: white;
-            border-radius: 18px;
-            padding: 22px;
+            border-radius: 22px;
+            padding: 25px;
             margin-bottom: 18px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.20);
+            box-shadow: 0 7px 25px rgba(80, 30, 100, 0.10);
         }
 
         .card h2 {
             color: #7b2cbf;
-            margin-bottom: 12px;
+            font-size: 22px;
+            margin-bottom: 15px;
         }
 
-        /* HARGA */
-        .price {
+        /* =========================
+           PRICE
+        ========================== */
+
+        .price-card {
             text-align: center;
+            margin-top: -35px;
+            position: relative;
         }
 
-        .price .amount {
-            font-size: 38px;
-            font-weight: bold;
+        .price-label {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .price {
             color: #e83e8c;
-            margin: 10px 0;
+            font-size: 40px;
+            font-weight: bold;
+            margin: 5px 0;
         }
 
-        .price p {
+        .price-note {
             color: #666;
+            font-size: 14px;
         }
 
-        /* LAYANAN */
+        .badge {
+            display: inline-block;
+            background: #f3e5f5;
+            color: #7b2cbf;
+            padding: 7px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* =========================
+           BUTTON
+        ========================== */
+
+        .main-button {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: linear-gradient(135deg, #25D366, #1ebe5d);
+            color: white;
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 18px;
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.25);
+        }
+
+        .main-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           SERVICES
+        ========================== */
+
         .services {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -85,134 +159,161 @@
         }
 
         .service {
-            background: #f8f1ff;
-            border-radius: 12px;
-            padding: 18px 10px;
+            background: #faf5ff;
+            border: 1px solid #eee0fa;
+            border-radius: 16px;
+            padding: 20px 10px;
             text-align: center;
         }
 
-        .service .icon {
-            font-size: 35px;
-            margin-bottom: 8px;
+        .service-icon {
+            font-size: 38px;
+            margin-bottom: 7px;
         }
 
         .service h3 {
             color: #7b2cbf;
             font-size: 17px;
+            margin-bottom: 5px;
         }
 
         .service p {
+            color: #777;
             font-size: 13px;
-            color: #666;
-            margin-top: 5px;
         }
 
-        /* TOMBOL WHATSAPP */
-        .whatsapp {
+        /* =========================
+           KEUNGGULAN
+        ========================== */
+
+        .advantages {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .advantage {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-
-            background: #25D366;
-            color: white;
-
-            text-decoration: none;
-
-            padding: 16px;
+            gap: 13px;
+            background: #fafafa;
+            padding: 13px;
             border-radius: 12px;
-
-            font-size: 18px;
-            font-weight: bold;
-
-            margin-top: 15px;
         }
 
-        .whatsapp:hover {
-            opacity: 0.9;
-        }
-
-        .wa-icon {
+        .advantage-icon {
             font-size: 25px;
         }
 
-        /* LOKASI */
+        .advantage strong {
+            color: #555;
+        }
+
+        /* =========================
+           LOCATION
+        ========================== */
+
         .location {
             text-align: center;
         }
 
-        .map-pin {
-            width: 45px;
-            height: 45px;
-            background: #e83e8c;
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            margin: 10px auto 20px;
-            position: relative;
+        .location-icon {
+            font-size: 50px;
+            margin-bottom: 5px;
         }
 
-        .map-pin::after {
-            content: "";
-            width: 17px;
-            height: 17px;
-            background: white;
-            border-radius: 50%;
-            position: absolute;
-            top: 14px;
-            left: 14px;
+        .location p {
+            color: #666;
+            margin-bottom: 15px;
         }
 
-        .maps {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-
-            background: #f5f5f5;
+        .maps-button {
+            display: block;
+            background: #f1f1f1;
             color: #333;
-
             text-decoration: none;
-
             padding: 15px;
-            border-radius: 12px;
-
-            font-size: 17px;
+            border-radius: 13px;
             font-weight: bold;
-
             border: 1px solid #ddd;
         }
 
-        .maps:hover {
-            background: #eeeeee;
+        .maps-button:hover {
+            background: #e8e8e8;
         }
 
-        /* INFO */
-        .info p {
-            margin: 8px 0;
-            line-height: 1.5;
+        /* =========================
+           INFO
+        ========================== */
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 12px 0;
         }
 
-        /* FOOTER */
-        footer {
+        .info-icon {
+            font-size: 24px;
+            width: 35px;
             text-align: center;
-            color: white;
-            padding: 20px 5px 10px;
-            font-size: 14px;
         }
 
-        /* HP */
-        @media (max-width: 400px) {
+        /* =========================
+           FOOTER
+        ========================== */
 
-            header h1 {
-                font-size: 30px;
+        footer {
+            background: #32104f;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 13px;
+        }
+
+        footer strong {
+            font-size: 16px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 450px) {
+
+            .hero {
+                padding: 35px 15px 50px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero .subtitle {
+                font-size: 16px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .price {
+                font-size: 34px;
             }
 
             .services {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
+        }
 
-            .price .amount {
-                font-size: 32px;
+        @media (max-width: 350px) {
+
+            .services {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -221,239 +322,311 @@
 
 <body>
 
-<div class="container">
+    <!-- HERO -->
+    <section class="hero">
 
-    <!-- =========================
-         HEADER
-    ========================== -->
-
-    <header>
-
-        <div class="crown">
-            👑
-        </div>
+        <div class="crown">👑</div>
 
         <h1>Queen Laundry</h1>
+
+        <p class="subtitle">
+            Cuci • Kering • Setrika
+        </p>
+
+        <p class="tagline">
+            Bersih • Wangi • Rapi • Siap Dipakai
+        </p>
+
+    </section>
+
+
+    <main class="container content">
+
+        <!-- HARGA -->
+        <section class="card price-card">
+
+            <p class="price-label">
+                Laundry mulai dari
+            </p>
+
+            <div class="price">
+                Rp8.000/kg
+            </div>
+
+            <p class="price-note">
+                Harga terjangkau untuk pakaian bersih dan wangi.
+            </p>
+
+            <div class="badge">
+                ✨ Hemat • Bersih • Rapi
+            </div>
+
+            <a
+                class="main-button"
+                href="https://wa.me/6282138890048"
+                target="_blank">
+
+                📱 Pesan Lewat WhatsApp
+
+            </a>
+
+        </section>
+
+
+        <!-- LAYANAN -->
+        <section class="card">
+
+            <h2>✨ Layanan Kami</h2>
+
+            <div class="services">
+
+                <div class="service">
+
+                    <div class="service-icon">
+                        🧺
+                    </div>
+
+                    <h3>Cuci</h3>
+
+                    <p>
+                        Pakaian dicuci bersih.
+                    </p>
+
+                </div>
+
+
+                <div class="service">
+
+                    <div class="service-icon">
+                        💨
+                    </div>
+
+                    <h3>Kering</h3>
+
+                    <p>
+                        Pengeringan praktis.
+                    </p>
+
+                </div>
+
+
+                <div class="service">
+
+                    <div class="service-icon">
+                        👕
+                    </div>
+
+                    <h3>Setrika</h3>
+
+                    <p>
+                        Rapi dan siap dipakai.
+                    </p>
+
+                </div>
+
+
+                <div class="service">
+
+                    <div class="service-icon">
+                        👑
+                    </div>
+
+                    <h3>Paket Lengkap</h3>
+
+                    <p>
+                        Cuci + Kering + Setrika.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- KEUNGGULAN -->
+        <section class="card">
+
+            <h2>💜 Kenapa Queen Laundry?</h2>
+
+            <div class="advantages">
+
+                <div class="advantage">
+
+                    <div class="advantage-icon">
+                        ✨
+                    </div>
+
+                    <div>
+                        <strong>Bersih</strong><br>
+                        Pakaian dicuci dengan baik.
+                    </div>
+
+                </div>
+
+
+                <div class="advantage">
+
+                    <div class="advantage-icon">
+                        🌸
+                    </div>
+
+                    <div>
+                        <strong>Wangi</strong><br>
+                        Segar dan nyaman digunakan.
+                    </div>
+
+                </div>
+
+
+                <div class="advantage">
+
+                    <div class="advantage-icon">
+                        👔
+                    </div>
+
+                    <div>
+                        <strong>Rapi</strong><br>
+                        Siap dipakai setelah selesai.
+                    </div>
+
+                </div>
+
+
+                <div class="advantage">
+
+                    <div class="advantage-icon">
+                        ❤️
+                    </div>
+
+                    <div>
+                        <strong>Pelayanan</strong><br>
+                        Kami melayani pelanggan dengan baik.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WHATSAPP -->
+        <section class="card">
+
+            <h2>📱 Hubungi Kami</h2>
+
+            <p>
+                Ingin bertanya harga atau memesan laundry?
+                Silakan hubungi Queen Laundry melalui WhatsApp.
+            </p>
+
+            <a
+                class="main-button"
+                href="https://wa.me/6282138890048"
+                target="_blank">
+
+                💬 Chat WhatsApp
+
+            </a>
+
+        </section>
+
+
+        <!-- LOKASI -->
+        <section class="card location">
+
+            <h2>📍 Lokasi Queen Laundry</h2>
+
+            <div class="location-icon">
+                📍
+            </div>
+
+            <p>
+                Temukan lokasi kami melalui Google Maps.
+            </p>
+
+            <a
+                class="maps-button"
+                href="https://maps.app.goo.gl/tFprpCX15SVQaRmdA?g_st=ac"
+                target="_blank">
+
+                🗺️ Buka Google Maps
+
+            </a>
+
+        </section>
+
+
+        <!-- INFORMASI -->
+        <section class="card">
+
+            <h2>ℹ️ Informasi</h2>
+
+            <div class="info-row">
+
+                <div class="info-icon">🧺</div>
+
+                <div>
+                    Cuci, kering dan setrika.
+                </div>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <div class="info-icon">💜</div>
+
+                <div>
+                    Harga mulai Rp8.000/kg.
+                </div>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <div class="info-icon">📱</div>
+
+                <div>
+                    Pemesanan melalui WhatsApp.
+                </div>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <div class="info-icon">📍</div>
+
+                <div>
+                    Lokasi dapat dilihat melalui Google Maps.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            <strong>👑 Queen Laundry</strong>
+        </p>
 
         <p>
             Cuci • Kering • Setrika
         </p>
-
-    </header>
-
-
-    <!-- =========================
-         HARGA
-    ========================== -->
-
-    <div class="card price">
-
-        <h2>💰 Harga Laundry</h2>
-
-        <div class="amount">
-            Mulai Rp8.000/kg
-        </div>
-
-        <p>
-            Laundry bersih, wangi dan rapi.
-        </p>
-
-    </div>
-
-
-    <!-- =========================
-         LAYANAN
-    ========================== -->
-
-    <div class="card">
-
-        <h2>✨ Layanan Kami</h2>
-
-        <div class="services">
-
-            <div class="service">
-
-                <div class="icon">
-                    🧺
-                </div>
-
-                <h3>Cuci</h3>
-
-                <p>
-                    Pakaian dicuci bersih
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <div class="icon">
-                    💨
-                </div>
-
-                <h3>Kering</h3>
-
-                <p>
-                    Pengeringan cepat
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <div class="icon">
-                    👕
-                </div>
-
-                <h3>Setrika</h3>
-
-                <p>
-                    Rapi dan siap dipakai
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <div class="icon">
-                    👑
-                </div>
-
-                <h3>Paket Lengkap</h3>
-
-                <p>
-                    Cuci + Kering + Setrika
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         WHATSAPP
-    ========================== -->
-
-    <div class="card">
-
-        <h2>📱 Pesan Laundry</h2>
-
-        <p>
-            Hubungi kami melalui WhatsApp
-            untuk pemesanan atau informasi.
-        </p>
-
-        <!--
-        GANTI NOMOR DI BAWAH
-        Contoh:
-        6281234567890
-        -->
-
-        <a
-            class="whatsapp"
-            href="https://wa.me/6282138890048"
-            target="_blank">
-
-            <span class="wa-icon">
-                📱
-            </span>
-
-            <span>
-                Chat WhatsApp
-            </span>
-
-        </a>
-
-    </div>
-
-
-    <!-- =========================
-         LOKASI
-    ========================== -->
-
-    <div class="card location">
-
-        <h2>📍 Lokasi Queen Laundry</h2>
-
-        <p>
-            Temukan lokasi Queen Laundry
-            melalui Google Maps.
-        </p>
-
-        <div class="map-pin"></div>
-
-
-        <!--
-        LINK GOOGLE MAPS
-        -->
-
-        <a
-            class="maps"
-            href="https://maps.app.goo.gl/tFprpCX15SVQaRmdA?g_st=ac"
-            target="_blank">
-
-            <span>
-                📍
-            </span>
-
-            <span>
-                Buka Google Maps
-            </span>
-
-        </a>
-
-    </div>
-
-
-    <!-- =========================
-         INFORMASI
-    ========================== -->
-
-    <div class="card info">
-
-        <h2>ℹ️ Informasi</h2>
-
-        <p>
-            👕 Pakaian bersih
-        </p>
-
-        <p>
-            🌸 Wangi dan segar
-        </p>
-
-        <p>
-            ✨ Rapi dan siap dipakai
-        </p>
-
-        <p>
-            👑 Pelayanan terbaik untuk pelanggan
-        </p>
-
-    </div>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
 
         <p>
             © 2026 Queen Laundry
         </p>
 
-        <p>
-            Cuci • Kering • Setrika
-        </p>
-
     </footer>
-
-</div>
 
 </body>
 </html>
