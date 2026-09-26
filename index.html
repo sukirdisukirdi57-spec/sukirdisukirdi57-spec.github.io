@@ -854,6 +854,12 @@ document.getElementById("orderForm").addEventListener("submit", function(event) 
     const berat = document.getElementById("berat").value;
     const catatan = document.getElementById("catatan").value || "-";
     const nomorHP = document.getElementById("nomor").value;
+if (!/^[0-9]{10,13}$/.test(nomorHP)) {
+    alert("Nomor HP harus 10–13 digit angka.");
+    return;
+
+}
+
 const antarjemput = document.getElementById("antarjemput").value;
 const alamat = document.getElementById("alamat").value;
 const waktu = document.getElementById("waktu").value;
