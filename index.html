@@ -657,7 +657,51 @@
             required>
 
 
-        <label for="catatan">Catatan</label>
+       <label for="nomor">Nomor HP</label>
+
+<input
+    type="tel"
+    id="nomor"
+    placeholder="Contoh: 08123456789"
+    required>
+
+
+<label for="antarjemput">Antar-Jemput</label>
+
+<select id="antarjemput" required>
+
+    <option value="">Pilih layanan antar-jemput</option>
+    <option value="Antar-jemput">Antar-jemput</option>
+    <option value="Datang sendiri">Datang sendiri</option>
+
+</select>
+
+
+<label for="alamat">Alamat Pelanggan</label>
+
+<textarea
+    id="alamat"
+    placeholder="Masukkan alamat lengkap"
+    rows="3"
+    required></textarea>
+
+
+<label for="waktu">Waktu Pengambilan</label>
+
+<select id="waktu" required>
+
+    <option value="">Pilih waktu pengambilan</option>
+    <option value="07.00–09.00">07.00–09.00</option>
+    <option value="09.00–11.00">09.00–11.00</option>
+    <option value="11.00–13.00">11.00–13.00</option>
+    <option value="13.00–15.00">13.00–15.00</option>
+    <option value="15.00–17.00">15.00–17.00</option>
+    <option value="17.00–19.00">17.00–19.00</option>
+
+</select>
+
+
+<label for="catatan">Catatan</label> <label for="catatan">Catatan</label>
 
         <textarea
             id="catatan"
@@ -789,16 +833,23 @@ document.getElementById("orderForm").addEventListener("submit", function(event) 
     const layanan = document.getElementById("layanan").value;
     const berat = document.getElementById("berat").value;
     const catatan = document.getElementById("catatan").value || "-";
-
-    const pesan = `Halo Queen Laundry Mangesti,
+    const nomorHP = document.getElementById("nomor").value;
+const antarjemput = document.getElementById("antarjemput").value;
+const alamat = document.getElementById("alamat").value;
+const waktu = document.getElementById("waktu").value;
+ 
+   const pesan = `Halo Queen Laundry Mangesti,
 
 Saya ingin memesan laundry.
 
 Nama: ${nama}
 Layanan: ${layanan}
 Perkiraan berat: ${berat} kg
-Catatan: ${catatan}`;
-
+Catatan: ${catatan}
+Nomor HP: ${nomorHP}
+Antar-jemput: ${antarjemput}
+Alamat: ${alamat}
+Waktu pengambilan: ${waktu}`;
     const nomor = "6282138890048";
 
     window.open(
