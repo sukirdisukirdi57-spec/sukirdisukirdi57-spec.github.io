@@ -296,8 +296,7 @@
     color: #e83e8c;
     font-size: 20px;
 }
-
-       /* =========================
+/* =========================
    FORM PEMESANAN
 ========================= */
 
@@ -322,6 +321,7 @@
     font-size: 15px;
     font-family: inherit;
     background: #fff;
+    box-sizing: border-box;
 }
 
 #orderForm input:focus,
@@ -339,6 +339,15 @@
     border: none;
     width: 100%;
     cursor: pointer;
+}
+
+.form-help {
+    display: block;
+    color: #888;
+    font-size: 13px;
+    margin-top: 5px;
+    line-height: 1.4;
+}
 } /* =========================
            FOOTER
         ========================== */
@@ -658,13 +667,19 @@
 
 
        <label for="nomor">Nomor HP</label>
+       <small class="form-help">
+    Masukkan 10–13 digit angka, contoh: 08123456789
+</small>
 
 <input
     type="tel"
     id="nomor"
     placeholder="Contoh: 08123456789"
+    pattern="[0-9]{10,13}"
+    minlength="10"
+    maxlength="13"
+    inputmode="numeric"
     required>
-
 
 <label for="antarjemput">Antar-Jemput</label>
 
