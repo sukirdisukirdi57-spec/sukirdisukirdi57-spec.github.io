@@ -297,7 +297,49 @@
     font-size: 20px;
 }
 
-        /* =========================
+       /* =========================
+   FORM PEMESANAN
+========================= */
+
+#orderForm {
+    margin-top: 18px;
+}
+
+#orderForm label {
+    display: block;
+    color: #555;
+    font-weight: bold;
+    margin: 14px 0 7px;
+}
+
+#orderForm input,
+#orderForm select,
+#orderForm textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: inherit;
+    background: #fff;
+}
+
+#orderForm input:focus,
+#orderForm select:focus,
+#orderForm textarea:focus {
+    outline: none;
+    border-color: #9c27b0;
+}
+
+#orderForm textarea {
+    resize: vertical;
+}
+
+#orderForm button {
+    border: none;
+    width: 100%;
+    cursor: pointer;
+} /* =========================
            FOOTER
         ========================== */
 
@@ -570,7 +612,70 @@
 
         </section>
 
+        <!-- FORM PEMESANAN -->
+<section class="card">
 
+    <h2>🧺 Form Pemesanan</h2>
+
+    <p>
+        Isi data berikut, lalu kirim pesanan melalui WhatsApp.
+    </p>
+
+    <form id="orderForm">
+
+        <label for="nama">Nama</label>
+
+        <input
+            type="text"
+            id="nama"
+            placeholder="Nama Anda"
+            required>
+
+
+        <label for="layanan">Layanan</label>
+
+        <select id="layanan" required>
+
+            <option value="">Pilih layanan</option>
+            <option value="Cuci">Cuci</option>
+            <option value="Kering">Kering</option>
+            <option value="Setrika">Setrika</option>
+            <option value="Cuci + Kering + Setrika">
+                Paket Lengkap
+            </option>
+
+        </select>
+
+
+        <label for="berat">Perkiraan Berat</label>
+
+        <input
+            type="number"
+            id="berat"
+            placeholder="Contoh: 5"
+            min="1"
+            required>
+
+
+        <label for="catatan">Catatan</label>
+
+        <textarea
+            id="catatan"
+            placeholder="Contoh: pakaian putih dipisahkan"
+            rows="4"></textarea>
+
+
+        <button
+            type="submit"
+            class="main-button">
+
+            📱 Kirim Pesanan ke WhatsApp
+
+        </button>
+
+    </form>
+
+</section>
         <!-- LOKASI -->
         <section class="card location">
 
@@ -675,6 +780,32 @@
         </p>
 
     </footer>
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(event) {
 
+    event.preventDefault();
+
+    const nama = document.getElementById("nama").value;
+    const layanan = document.getElementById("layanan").value;
+    const berat = document.getElementById("berat").value;
+    const catatan = document.getElementById("catatan").value || "-";
+
+    const pesan = `Halo Queen Laundry Mangesti,
+
+Saya ingin memesan laundry.
+
+Nama: ${nama}
+Layanan: ${layanan}
+Perkiraan berat: ${berat} kg
+Catatan: ${catatan}`;
+
+    const nomor = "6282138890048";
+
+    window.open(
+        "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan),
+        "_blank"
+    );
+});
+</script>
 </body>
 </html>
