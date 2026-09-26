@@ -842,6 +842,11 @@
 <script>
 document.getElementById("orderForm").addEventListener("submit", function(event) {
 
+    if (!this.checkValidity()) {
+        this.reportValidity();
+        return;
+    }
+
     event.preventDefault();
 
     const nama = document.getElementById("nama").value;
