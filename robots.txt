@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sukirdisukirdi57-spec.github.io/sitemap.xml
