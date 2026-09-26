@@ -878,6 +878,20 @@ if (!/^[0-9]{10,13}$/.test(nomorHP)) {
 const antarjemput = document.getElementById("antarjemput").value;
 const alamat = document.getElementById("alamat").value;
 const waktu = document.getElementById("waktu").value;
+if (nama.length > 50) {
+    alert("Nama maksimal 50 karakter.");
+    return;
+}
+
+if (catatan.length > 300) {
+    alert("Catatan maksimal 300 karakter.");
+    return;
+}
+
+if (alamat.length > 300) {
+    alert("Alamat maksimal 300 karakter.");
+    return;
+}
  
    const pesan = `Halo Queen Laundry Mangesti,
 
